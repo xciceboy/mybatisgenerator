@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Dao.AnswersMapper">
-  <resultMap id="BaseResultMap" type="Entity.Answers">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="question" jdbcType="INTEGER" property="question" />
-    <result column="answeroption" jdbcType="VARCHAR" property="answeroption" />
-    <result column="optiontype" jdbcType="SMALLINT" property="optiontype" />
-    <result column="lan" jdbcType="VARCHAR" property="lan" />
-    <result column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="departno" jdbcType="VARCHAR" property="departno" />
-    <result column="creatime" jdbcType="TIMESTAMP" property="creatime" />
-    <result column="alterid" jdbcType="INTEGER" property="alterid" />
-    <result column="altime" jdbcType="TIMESTAMP" property="altime" />
-    <result column="isdel" jdbcType="SMALLINT" property="isdel" />
-    <result column="optionlabel" jdbcType="VARCHAR" property="optionlabel" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Dao.AnswersMapper" >
+  <resultMap id="BaseResultMap" type="Entity.Answers" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="question" property="question" jdbcType="INTEGER" />
+    <result column="answeroption" property="answeroption" jdbcType="VARCHAR" />
+    <result column="optiontype" property="optiontype" jdbcType="SMALLINT" />
+    <result column="lan" property="lan" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="departno" property="departno" jdbcType="VARCHAR" />
+    <result column="creatime" property="creatime" jdbcType="TIMESTAMP" />
+    <result column="alterid" property="alterid" jdbcType="INTEGER" />
+    <result column="altime" property="altime" jdbcType="TIMESTAMP" />
+    <result column="isdel" property="isdel" jdbcType="SMALLINT" />
+    <result column="optionlabel" property="optionlabel" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, question, answeroption, optiontype, lan, uid, departno, creatime, alterid, altime, 
     isdel, optionlabel
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from answers
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from answers
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="Entity.Answers">
+  <insert id="insert" parameterType="Entity.Answers" >
     insert into answers (id, question, answeroption, 
       optiontype, lan, uid, 
       departno, creatime, alterid, 
@@ -41,125 +41,125 @@
       #{altime,jdbcType=TIMESTAMP}, #{isdel,jdbcType=SMALLINT}, #{optionlabel,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="Entity.Answers">
+  <insert id="insertSelective" parameterType="Entity.Answers" >
     insert into answers
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="question != null">
+      <if test="question != null" >
         question,
       </if>
-      <if test="answeroption != null">
+      <if test="answeroption != null" >
         answeroption,
       </if>
-      <if test="optiontype != null">
+      <if test="optiontype != null" >
         optiontype,
       </if>
-      <if test="lan != null">
+      <if test="lan != null" >
         lan,
       </if>
-      <if test="uid != null">
+      <if test="uid != null" >
         uid,
       </if>
-      <if test="departno != null">
+      <if test="departno != null" >
         departno,
       </if>
-      <if test="creatime != null">
+      <if test="creatime != null" >
         creatime,
       </if>
-      <if test="alterid != null">
+      <if test="alterid != null" >
         alterid,
       </if>
-      <if test="altime != null">
+      <if test="altime != null" >
         altime,
       </if>
-      <if test="isdel != null">
+      <if test="isdel != null" >
         isdel,
       </if>
-      <if test="optionlabel != null">
+      <if test="optionlabel != null" >
         optionlabel,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="question != null">
+      <if test="question != null" >
         #{question,jdbcType=INTEGER},
       </if>
-      <if test="answeroption != null">
+      <if test="answeroption != null" >
         #{answeroption,jdbcType=VARCHAR},
       </if>
-      <if test="optiontype != null">
+      <if test="optiontype != null" >
         #{optiontype,jdbcType=SMALLINT},
       </if>
-      <if test="lan != null">
+      <if test="lan != null" >
         #{lan,jdbcType=VARCHAR},
       </if>
-      <if test="uid != null">
+      <if test="uid != null" >
         #{uid,jdbcType=INTEGER},
       </if>
-      <if test="departno != null">
+      <if test="departno != null" >
         #{departno,jdbcType=VARCHAR},
       </if>
-      <if test="creatime != null">
+      <if test="creatime != null" >
         #{creatime,jdbcType=TIMESTAMP},
       </if>
-      <if test="alterid != null">
+      <if test="alterid != null" >
         #{alterid,jdbcType=INTEGER},
       </if>
-      <if test="altime != null">
+      <if test="altime != null" >
         #{altime,jdbcType=TIMESTAMP},
       </if>
-      <if test="isdel != null">
+      <if test="isdel != null" >
         #{isdel,jdbcType=SMALLINT},
       </if>
-      <if test="optionlabel != null">
+      <if test="optionlabel != null" >
         #{optionlabel,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="Entity.Answers">
+  <update id="updateByPrimaryKeySelective" parameterType="Entity.Answers" >
     update answers
-    <set>
-      <if test="question != null">
+    <set >
+      <if test="question != null" >
         question = #{question,jdbcType=INTEGER},
       </if>
-      <if test="answeroption != null">
+      <if test="answeroption != null" >
         answeroption = #{answeroption,jdbcType=VARCHAR},
       </if>
-      <if test="optiontype != null">
+      <if test="optiontype != null" >
         optiontype = #{optiontype,jdbcType=SMALLINT},
       </if>
-      <if test="lan != null">
+      <if test="lan != null" >
         lan = #{lan,jdbcType=VARCHAR},
       </if>
-      <if test="uid != null">
+      <if test="uid != null" >
         uid = #{uid,jdbcType=INTEGER},
       </if>
-      <if test="departno != null">
+      <if test="departno != null" >
         departno = #{departno,jdbcType=VARCHAR},
       </if>
-      <if test="creatime != null">
+      <if test="creatime != null" >
         creatime = #{creatime,jdbcType=TIMESTAMP},
       </if>
-      <if test="alterid != null">
+      <if test="alterid != null" >
         alterid = #{alterid,jdbcType=INTEGER},
       </if>
-      <if test="altime != null">
+      <if test="altime != null" >
         altime = #{altime,jdbcType=TIMESTAMP},
       </if>
-      <if test="isdel != null">
+      <if test="isdel != null" >
         isdel = #{isdel,jdbcType=SMALLINT},
       </if>
-      <if test="optionlabel != null">
+      <if test="optionlabel != null" >
         optionlabel = #{optionlabel,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="Entity.Answers">
+  <update id="updateByPrimaryKey" parameterType="Entity.Answers" >
     update answers
     set question = #{question,jdbcType=INTEGER},
       answeroption = #{answeroption,jdbcType=VARCHAR},
