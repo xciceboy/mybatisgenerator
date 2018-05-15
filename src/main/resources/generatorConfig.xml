@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 具体配置内容 -->
+
+    <!--<classPathEntry-->
+            <!--location="D:\maven\acp\org\postgresql\postgresql\9.4-1201-jdbc41\postgresql-9.4-1201-jdbc41.jar" />-->
+
     <context id="mycontext" targetRuntime="MyBatis3">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
