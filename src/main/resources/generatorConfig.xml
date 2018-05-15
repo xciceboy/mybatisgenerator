@@ -45,10 +45,5 @@
                enableSelectByExample="false" selectByExampleQueryId="false" >
             <property name="useActualColumnNames" value="true"/>
         </table>
-        <table tableName="question" domainObjectName="Question"
-               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false" >
-            <property name="useActualColumnNames" value="true"/>
-        </table>
     </context>
 </generatorConfiguration>
